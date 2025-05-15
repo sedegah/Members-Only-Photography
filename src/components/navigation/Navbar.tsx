@@ -33,24 +33,6 @@ const Navbar = () => {
     { href: "/contact", label: "Contact" },
   ];
 
-  const socialLinks = [
-    {
-      href: "https://twitter.com/heiskimathii",
-      icon: "/icons/twitter.svg",
-      alt: "Twitter",
-    },
-    {
-      href: "https://www.instagram.com/kim.ath.i",
-      icon: "/icons/instagram.svg",
-      alt: "Instagram",
-    },
-    {
-      href: "https://snapchat.com/add/mr.kimathi",
-      icon: "/icons/snapchat.svg",
-      alt: "Snapchat",
-    },
-  ];
-
   return (
     <header
       className={`sticky top-0 w-full z-50 transition-all duration-300 ${
@@ -89,25 +71,6 @@ const Navbar = () => {
           ))}
         </nav>
 
-        {/* Desktop Social Links */}
-        <div className="hidden md:flex items-center gap-4">
-          {socialLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src={link.icon}
-                alt={link.alt}
-                width={20}
-                height={20}
-              />
-            </Link>
-          ))}
-        </div>
-
         {/* Mobile Menu Button */}
         <button
           className="md:hidden z-20 p-2"
@@ -123,42 +86,4 @@ const Navbar = () => {
             mobileMenuOpen ? "translate-x-0" : "translate-x-full"
           } md:hidden`}
         >
-          <div className="h-20"></div>
-          <div className="flex flex-col items-center justify-center flex-grow p-4 space-y-8">
-            {navigationLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-xl font-medium hover:text-gray-600 transition-colors"
-                onClick={closeMobileMenu}
-              >
-                {link.label}
-              </Link>
-            ))}
-
-            <div className="flex items-center justify-center gap-6 mt-8">
-              {socialLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={closeMobileMenu}
-                >
-                  <Image
-                    src={link.icon}
-                    alt={link.alt}
-                    width={24}
-                    height={24}
-                  />
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-  );
-};
-
-export default Navbar;
+          <div className="h-20"></div
