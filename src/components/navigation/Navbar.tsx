@@ -10,21 +10,13 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
-  };
+  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+  const closeMobileMenu = () => setMobileMenuOpen(false);
 
   const navigationLinks = [
     { href: "/", label: "Home" },
@@ -79,11 +71,30 @@ const Navbar = () => {
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
+      </div>
 
-        {/* Mobile Menu */}
-        <div
-          className={`fixed inset-0 bg-white z-10 flex flex-col transition-transform duration-300 ease-in-out transform ${
-            mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-          } md:hidden`}
-        >
-          <div className="h-20"></div
+      {/* Mobile Menu */}
+      <div
+        className={`fixed inset-0 bg-white z-10 flex flex-col transition-transform duration-300 ease-in-out transform md:hidden ${
+          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="h-20"></div>
+        <nav className="flex flex-col items-center gap-6 mt-8">
+          {navigationLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={closeMobileMenu}
+              className="text-lg font-medium"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
+    </header>
+  );
+};
+
+export default Navbar;
