@@ -9,7 +9,6 @@ import { Moon, Sun } from "lucide-react";
 export default function Home() {
   const [isDark, setIsDark] = useState(false);
 
-  // Apply dark class to <html> when toggled
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add("dark");
@@ -20,6 +19,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300 relative">
+      
       {/* Hero Section */}
       <section className="relative w-full h-[500px] md:h-[700px]">
         <Image
@@ -31,13 +31,14 @@ export default function Home() {
           crossOrigin="anonymous"
         />
         <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center p-4">
-          <h1 className="text-3xl md:text-5xl font-medium mb-4 md:mb-6">
+          {/* Force hero text to always be white */}
+          <h1 className="text-3xl md:text-5xl font-medium mb-4 md:mb-6 text-white">
             Make It Stand Out
           </h1>
-          <p className="max-w-2xl text-base md:text-lg mb-4 md:mb-8 px-4">
+          <p className="max-w-2xl text-base md:text-lg mb-4 md:mb-8 px-4 text-white">
             A collaborative platform for all your needs. Learn how to optimize your team's output to maximize your work.
           </p>
-          <p className="max-w-2xl text-base md:text-lg mb-8 md:mb-12 px-4">
+          <p className="max-w-2xl text-base md:text-lg mb-8 md:mb-12 px-4 text-white">
             Using strategies with proven results, we can help boost your business and branding. Begin your journey today
             and bring your ideas to life!
           </p>
