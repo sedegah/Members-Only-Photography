@@ -1,4 +1,4 @@
-can we add dark mode where the theme and text colour changes appropriately  import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
