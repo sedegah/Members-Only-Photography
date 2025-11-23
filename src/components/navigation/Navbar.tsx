@@ -4,9 +4,21 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
-const Navbar = () => {
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme === "dark") {
+      setIsDark(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      setIsDark(false);
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -33,9 +45,15 @@ const Navbar = () => {
       }`}
     >
       <div className="flex items-center justify-between container py-4">
-        <h1 className="text-lg md:text-xl font-medium text-black dark:text-white">
+
+        {/* Clickable Logo / Title */}
+        <Link
+          href="/"
+          onClick={closeMobileMenu}
+          className="text-lg md:text-xl font-medium text-black dark:text-white"
+        >
           Members Only Photography
-        </h1>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
@@ -60,13 +78,14 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 z-10 flex flex-col bg-white dark:bg-gray-900 transition-transform duration-300 ease-in-out transform md:hidden ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="h-20"></div>
+        <div className="h-20" />
+
         <nav className="flex flex-col items-center gap-6 mt-8">
           {navigationLinks.map((link) => (
             <Link
@@ -82,6 +101,4 @@ const Navbar = () => {
       </div>
     </header>
   );
-};
-
-export default Navbar;
+}
