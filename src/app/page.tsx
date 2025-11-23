@@ -31,7 +31,7 @@ export default function Home() {
               Get Started
             </Button>
             <Link href="/contact">
-              <Button className="text-white border-white hover:bg-white/10 hover:text-black">
+              <Button className="bg-white text-black hover:bg-gray-100 border border-white">
                 Contact Us
               </Button>
             </Link>
