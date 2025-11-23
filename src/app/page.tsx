@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
       {/* Hero Section */}
       <section className="relative w-full h-[500px] md:h-[700px]">
         <Image
@@ -15,7 +15,7 @@ export default function Home() {
           priority
           crossOrigin="anonymous"
         />
-        <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white text-center p-4">
+        <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center p-4">
           <h1 className="text-3xl md:text-5xl font-medium mb-4 md:mb-6">
             Make It Stand Out
           </h1>
@@ -27,11 +27,11 @@ export default function Home() {
             and bring your ideas to life!
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button className="bg-white text-black hover:bg-gray-100 border border-white">
+            <Button className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 border border-white dark:border-gray-700">
               Get Started
             </Button>
             <Link href="/contact">
-              <Button className="bg-white text-black hover:bg-gray-100 border border-white">
+              <Button className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 border border-white dark:border-gray-700">
                 Contact Us
               </Button>
             </Link>
@@ -47,10 +47,10 @@ export default function Home() {
               Welcome to Members Only Photography
             </h2>
             <div className="mb-6">
-              <h3 className="text-gray-600 uppercase text-sm font-semibold tracking-wider mb-4">
+              <h3 className="text-gray-600 dark:text-gray-300 uppercase text-sm font-semibold tracking-wider mb-4">
                 LEARN MORE ABOUT WHAT WE DO
               </h3>
-              <p className="text-gray-700 mb-6">
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
                 Founded in June 2023, Members Only Photography was created to offer a simpler solution for
                 small businesses to improve their online presence through collaborative teamwork, web
                 optimizing strategies, and community support. This is a paragraph. You can write your own
