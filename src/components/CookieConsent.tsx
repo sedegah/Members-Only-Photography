@@ -7,13 +7,9 @@ const CookieConsent = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Check if user has already consented
     const hasConsented = localStorage.getItem("cookieConsent");
     if (!hasConsented) {
-      // Show the cookie consent popup after a short delay
-      const timer = setTimeout(() => {
-        setIsVisible(true);
-      }, 1000);
+      const timer = setTimeout(() => setIsVisible(true), 1000);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -29,19 +25,19 @@ const CookieConsent = () => {
   };
 
   const handleManage = () => {
-    // In a real implementation, this would show more detailed cookie settings
     console.log("Manage cookies clicked");
   };
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50">
-      <div className="bg-white p-8 max-w-md rounded-md shadow-lg">
-        <h2 className="text-lg font-semibold text-center mb-4">We use cookies</h2>
-        <p className="text-sm text-center mb-6">
+    <div className="fixed inset-0 flex items-end md:items-center justify-center z-50 bg-black/50 p-4">
+      <div className="bg-white p-6 md:p-8 max-w-md w-full rounded-lg shadow-lg text-center">
+        <h2 className="text-lg md:text-xl font-semibold mb-2">We use cookies</h2>
+        <p className="text-sm md:text-base mb-4">
           We use our own and third-party cookies to personalize content and analyze web traffic.
         </p>
+
         <div className="flex flex-col gap-2">
           <Button
             onClick={handleAccept}
@@ -49,6 +45,7 @@ const CookieConsent = () => {
           >
             Accept
           </Button>
+
           <Button
             onClick={handleReject}
             variant="outline"
@@ -56,9 +53,10 @@ const CookieConsent = () => {
           >
             Reject all
           </Button>
+
           <button
             onClick={handleManage}
-            className="text-xs underline mt-2 text-center w-full"
+            className="text-xs underline mt-2 text-center w-full hover:text-gray-700"
           >
             Manage cookies
           </button>
