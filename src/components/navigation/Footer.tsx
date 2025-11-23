@@ -47,4 +47,12 @@ const Footer = () => {
       <div className="bg-pink-light py-4 text-center">
         <div className="container mx-auto px-4">
           <p className="text-sm">
-            © 2023-2025 Members Only Photography.
+            © 2023-2025 Members Only Photography. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
