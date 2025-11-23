@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
@@ -32,23 +31,9 @@ const Navbar = () => {
       }`}
     >
       <div className="flex items-center justify-between container py-4">
-        <Link
-          href="/"
-          className="flex items-center gap-2 z-20"
-          onClick={closeMobileMenu}
-        >
-          <div className="relative w-[50px] h-[50px] md:w-[60px] md:h-[60px]">
-            <Image
-              src="/icons/logo.png"
-              alt="Members Only Photography Logo"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <h1 className="text-lg md:text-xl font-medium">
-            Members Only Photography
-          </h1>
-        </Link>
+        <h1 className="text-lg md:text-xl font-medium">
+          Members Only Photography
+        </h1>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
