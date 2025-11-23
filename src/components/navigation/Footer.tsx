@@ -6,7 +6,8 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="w-full">
-      <div className="bg-black text-white py-8 md:py-12">
+      {/* Main Footer */}
+      <div className="bg-black dark:bg-gray-900 text-white dark:text-white py-8 md:py-12 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col gap-4">
@@ -27,26 +28,33 @@ const Footer = () => {
 
             <div className="flex flex-col md:items-end gap-4">
               <span>GM 043 8877</span>
-              <Link href="tel:+233551307929" className="hover:underline">
+              <Link
+                href="tel:+233551307929"
+                className="hover:underline text-white dark:text-white"
+              >
                 +233551307929
               </Link>
-              <Link href="mailto:sedkim370@gmail.com" className="hover:underline">
+              <Link
+                href="mailto:sedkim370@gmail.com"
+                className="hover:underline text-white dark:text-white"
+              >
                 sedkim370@gmail.com
               </Link>
             </div>
           </div>
 
-          <div className="mt-8 border-t border-gray-800 pt-8">
-            <p className="text-sm md:text-base">
+          <div className="mt-8 border-t border-gray-800 dark:border-gray-700 pt-8">
+            <p className="text-sm md:text-base text-white dark:text-white">
               Showing our audience the world through the lens of a camera
             </p>
           </div>
         </div>
       </div>
 
-      <div className="bg-pink-light py-4 text-center">
+      {/* Bottom Footer */}
+      <div className="bg-pink-200 dark:bg-pink-700 py-4 text-center transition-colors duration-300">
         <div className="container mx-auto px-4">
-          <p className="text-sm">
+          <p className="text-sm text-black dark:text-white">
             © 2023-2025 Members Only Photography. All rights reserved.
           </p>
         </div>
