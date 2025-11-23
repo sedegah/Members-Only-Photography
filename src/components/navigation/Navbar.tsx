@@ -27,11 +27,13 @@ const Navbar = () => {
   return (
     <header
       className={`sticky top-0 w-full z-50 transition-all duration-300 ${
-        scrolled || mobileMenuOpen ? "bg-white shadow-sm" : "bg-transparent"
+        scrolled || mobileMenuOpen
+          ? "bg-white dark:bg-gray-900 shadow-sm"
+          : "bg-transparent"
       }`}
     >
       <div className="flex items-center justify-between container py-4">
-        <h1 className="text-lg md:text-xl font-medium">
+        <h1 className="text-lg md:text-xl font-medium text-black dark:text-white">
           Members Only Photography
         </h1>
 
@@ -41,7 +43,7 @@ const Navbar = () => {
             <Link
               key={link.href}
               href={link.href}
-              className="hover:text-gray-600 transition-colors"
+              className="text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
             >
               {link.label}
             </Link>
@@ -50,7 +52,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden z-20 p-2"
+          className="md:hidden z-20 p-2 text-black dark:text-white"
           onClick={toggleMobileMenu}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
@@ -60,7 +62,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 bg-white z-10 flex flex-col transition-transform duration-300 ease-in-out transform md:hidden ${
+        className={`fixed inset-0 z-10 flex flex-col bg-white dark:bg-gray-900 transition-transform duration-300 ease-in-out transform md:hidden ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -71,7 +73,7 @@ const Navbar = () => {
               key={link.href}
               href={link.href}
               onClick={closeMobileMenu}
-              className="text-lg font-medium"
+              className="text-lg font-medium text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
             >
               {link.label}
             </Link>
