@@ -16,7 +16,9 @@ export default function Home() {
           crossOrigin="anonymous"
         />
         <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white text-center p-4">
-          <h1 className="text-3xl md:text-5xl font-medium mb-4 md:mb-6">Make It Stand Out</h1>
+          <h1 className="text-3xl md:text-5xl font-medium mb-4 md:mb-6">
+            Make It Stand Out
+          </h1>
           <p className="max-w-2xl text-base md:text-lg mb-4 md:mb-8 px-4">
             A collaborative platform for all your needs. Learn how to optimize your team's output to maximize your work.
           </p>
@@ -28,9 +30,11 @@ export default function Home() {
             <Button className="bg-white text-black hover:bg-gray-100 border border-white">
               Get Started
             </Button>
-            <Button variant="outline" className="text-white border-white hover:bg-white/10">
-              <Link href="/contact">Contact Us</Link>
-            </Button>
+            <Link href="/contact">
+              <Button className="text-white border-white hover:bg-white/10 hover:text-black">
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -39,9 +43,13 @@ export default function Home() {
       <section className="py-12 md:py-20 px-4">
         <div className="container mx-auto grid md:grid-cols-2 gap-8">
           <div className="flex flex-col justify-center">
-            <h2 className="text-2xl md:text-4xl font-medium mb-4">Welcome to Members Only Photography</h2>
+            <h2 className="text-2xl md:text-4xl font-medium mb-4">
+              Welcome to Members Only Photography
+            </h2>
             <div className="mb-6">
-              <h3 className="text-gray-600 uppercase text-sm font-semibold tracking-wider mb-4">LEARN MORE ABOUT WHAT WE DO</h3>
+              <h3 className="text-gray-600 uppercase text-sm font-semibold tracking-wider mb-4">
+                LEARN MORE ABOUT WHAT WE DO
+              </h3>
               <p className="text-gray-700 mb-6">
                 Founded in June 2023, Members Only Photography was created to offer a simpler solution for
                 small businesses to improve their online presence through collaborative teamwork, web
@@ -50,7 +58,9 @@ export default function Home() {
                 world about your business, and make this text yours. This is a paragraph.
               </p>
               <Link href="/services">
-                <Button className="bg-pink-600 hover:bg-pink-700 text-white w-full sm:w-auto">See Our Pricing</Button>
+                <Button className="bg-pink-600 hover:bg-pink-700 text-white w-full sm:w-auto">
+                  See Our Pricing
+                </Button>
               </Link>
             </div>
           </div>
