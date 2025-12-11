@@ -18,11 +18,10 @@ export default function Contact() {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-
+//correspondence server still in progress
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Here you would normally send the data to a server
     alert("Thank you for your message! We will get back to you shortly.");
     setFormData({
       firstName: "",
