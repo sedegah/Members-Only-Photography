@@ -6,6 +6,24 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
 
+const highlights = [
+  {
+    title: "Brand Story Sessions",
+    description:
+      "Collaborative shoots designed around your brand voice, campaign goals, and audience.",
+  },
+  {
+    title: "Optimized for Digital",
+    description:
+      "Receive assets that are ready for websites, social channels, and paid campaigns from day one.",
+  },
+  {
+    title: "Reliable Delivery",
+    description:
+      "Clear timelines, guided planning, and a smooth process from consultation to final gallery.",
+  },
+];
+
 export default function Home() {
   const [isDark, setIsDark] = useState(false);
 
@@ -46,22 +64,23 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center p-4">
           {/* Force hero text to always be white */}
           <h1 className="text-3xl md:text-5xl font-medium mb-4 md:mb-6 text-white">
-            Make It Stand Out
+            Visuals That Move Your Brand Forward
           </h1>
           <p className="max-w-2xl text-base md:text-lg mb-4 md:mb-8 px-4 text-white">
-            A collaborative platform for all your needs. Learn how to optimize your team's output to maximize your work.
+            Members Only Photography helps small businesses create polished, purposeful imagery that builds trust and drives action.
           </p>
           <p className="max-w-2xl text-base md:text-lg mb-8 md:mb-12 px-4 text-white">
-            Using strategies with proven results, we can help boost your business and branding. Begin your journey today
-            and bring your ideas to life!
+            From planning to delivery, every session is tailored to your goals so your business shows up with clarity and confidence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 border border-white dark:border-gray-700">
-              Get Started
-            </Button>
+            <Link href="/services">
+              <Button className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 border border-white dark:border-gray-700">
+                Explore Services
+              </Button>
+            </Link>
             <Link href="/contact">
               <Button className="bg-white text-black hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 border border-white dark:border-gray-700">
-                Contact Us
+                Book a Consultation
               </Button>
             </Link>
           </div>
@@ -80,15 +99,11 @@ export default function Home() {
                 LEARN MORE ABOUT WHAT WE DO
               </h3>
               <p className="text-gray-700 dark:text-gray-300 mb-6">
-                Founded in June 2023, Members Only Photography was created to offer a simpler solution for
-                small businesses to improve their online presence through collaborative teamwork, web
-                optimizing strategies, and community support. This is a paragraph. You can write your own
-                content here, and fill in the blanks. What's your story and where do you go from here? Tell the
-                world about your business, and make this text yours. This is a paragraph.
+                Founded in June 2023, Members Only Photography was built to make high-quality brand content accessible for growing teams. We blend creative direction with practical marketing insight so your visuals are not only beautiful, but useful.
               </p>
               <Link href="/services">
                 <Button className="bg-pink-600 hover:bg-pink-700 text-white w-full sm:w-auto">
-                  See Our Pricing
+                  View Packages
                 </Button>
               </Link>
             </div>
@@ -101,6 +116,23 @@ export default function Home() {
               className="object-cover rounded-md"
               crossOrigin="anonymous"
             />
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-12 md:pb-20 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-2xl md:text-3xl font-medium mb-8 text-center">Why businesses choose us</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            {highlights.map((highlight) => (
+              <article
+                className="rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-6"
+                key={highlight.title}
+              >
+                <h3 className="text-lg font-semibold mb-2">{highlight.title}</h3>
+                <p className="text-sm md:text-base text-gray-700 dark:text-gray-300">{highlight.description}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
